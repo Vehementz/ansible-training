@@ -1,0 +1,7 @@
+---
+- name: "Installation MariaDB"
+  hosts: ovh
+  gather_facts: no
+  roles:
+    - role: mariadb
+
