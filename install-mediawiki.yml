@@ -1,5 +1,5 @@
 - name: "MadiaWiki db configuration"
-  hosts: db
+  hosts: ovh
   gather_facts: no
   tags: [ "mariadb", "mysql" ]
   roles:

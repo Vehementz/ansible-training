@@ -1,42 +1,38 @@
 ---
+
 # Base de données
 mediawiki_db_name: "mediawiki"
 
 # User et password
 mediawiki_db_user: "mediawiki"
-mediawiki_db_password: mediawiki_admin_user: !vault |
+mediawiki_db_password: !vault |
           $ANSIBLE_VAULT;1.1;AES256
           36616364623065363964343961393333303065393665666632623832373534353630333064653531
           3264346138666239623231653663313837353563313864660a383961623561316261616530303739
           39333463306438613133343232353136353138613165323666636233333664616638633364336261
-          3263366565383164380a333631666334356633336136353634613036656337663861373435323164
-          3936
-
-
+          3263366565383164380a3336316663343566333361363536346130366563376638613734353231643936
 
 # User admin et password
 mediawiki_admin_user: "admin"
-mediawiki_admin_user: mediawiki_admin_user: !vault |
+mediawiki_admin_password: !vault |
           $ANSIBLE_VAULT;1.1;AES256
           66353262346361306566626662363437383361366137356230633630653766333461323938353133
           3061326661363065353138336237323737643134643032310a323931306338393261393035303139
           39366538393065303662373165333738613039386565663763313561373233356633656535636131
-          6532666666326563630a383264303930303832393730653365363838663838666438336665363262
-          6336
+          6532666666326563630a3832643039303038323937306533653638386638386664383366653632626336
 
 # Nom du Mediawiki et de son titre 
 mediawiki_name: "mediawiki"
-mediawiki_tilte: "Mon super mediawiki !"
+mediawiki_title: "Mon super mediawiki"
 
 # Répertoire d'installation
 mediawiki_directory: "/var/www/html/{{mediawiki_name}}"
 
 # Répertoire maintenance
-mediawiki_maintenance_directory: "{{mediawiki_directory}}/maintenance
+mediawiki_maintenance_directory: "{{mediawiki_directory}}/maintenance"
 
 # Définie le premier node du groupe mariadb
-mediawiki_db_host: "{{groups.db.0}}"
-
+mediawiki_db_host: "{{ groups.db.0 }}"
 # l'url des sources Mediawiki
 mediawiki_archive_url: "https://releases.wikimedia.org/mediawiki/1.37/mediawiki-1.37.1.tar.gz"
 
