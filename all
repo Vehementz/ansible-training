@@ -1,4 +1,0 @@
-mysql_password:
-	!vault | ttruc
-
-

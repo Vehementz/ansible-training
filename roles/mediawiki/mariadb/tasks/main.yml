@@ -7,7 +7,7 @@
     state: "present"
 
 # Active le service MariaDB 
-- name: "start mariadb service
+- name: "start mariadb service"
   service:
     name: "mariadb"
     state: "started"

@@ -1,13 +1,24 @@
-- name: "MadiaWiki db configuration"
+---
+- name: "MediaWiki db configuration"
   hosts: ovh
+  vars:
+    ansible_port: 666
+  become: yes
+  vars_files:
+    - /home/xday/Desktop/ansible_quickstart/group_vars/madiawiki/vault.yml
   gather_facts: no
   tags: [ "mariadb", "mysql" ]
+
+  tasks:
+    - debug:
+        var: Goh9wM3FB98qMG8P21Ad
+
   roles:
     - role: "mediawiki/confdb"
-- name: "Mediawiki/confdb"
+
+- name: "Mediawiki/confapache"
   hosts: apache
   gather_facts: no
   tags: "apache"
   roles:
     - role: "mediawiki/confapache"
-

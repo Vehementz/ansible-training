@@ -44,7 +44,7 @@
     php install.php --scriptpath /{{mediawiki_name}}
     --dbname mediawiki --lang fr
     --dbuser {{mediawiki_db_user}}
-    --dbpass {{mediawiki_db_password}}
+    --dbpass "{{mediawiki_db_password}}"
     --pass {{mediawiki_admin_password}}
     --dbserver {{mediawiki_db_host}}
     --server http://ovh
